@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             BusinessCardTheme {
                 Surface (){
-                    BusinessInfo(name = "TEST", email = "TEST", social = "TEST")
                 }
             }
         }
@@ -48,27 +47,23 @@ class MainActivity : ComponentActivity() {
             )
         }
     }
+    @Composable
+    fun BusinessBottom(name: String, email: String, social: String, modifier: Modifier = Modifier){
+        Column (verticalArrangement = Arrangement.Bottom,
+            modifier = modifier){
+            Text(text = name)
+            Text(text = email)
+            Text(text = social)
+        }
+    }
 
     @Preview(showBackground = true)
     @Composable
     fun BusinessInfoPreview() {
         BusinessInfo("Dominique Legaspi", "Software Engineer")
+        BusinessBottom("Dominique Legaspi", "Test@Email.com", "Yo Mama")
+
     }
 
 }
 
-@Composable
-fun BusinessInfo(name: String, email: String, social: String, modifier: Modifier = Modifier){
-    Column (verticalArrangement = Arrangement.Bottom,
-        modifier = modifier){
-        Text(text = name)
-        Text(text = email)
-        Text(text = social)
-    }
-}
-
-@Preview
-@Composable
-fun BusinessPreview(){
-    BusinessInfo(name = "TEST", email = "TEST", social = "TEST")
-}
