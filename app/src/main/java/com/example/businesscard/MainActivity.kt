@@ -29,70 +29,73 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BusinessCardTheme {
-                Surface (modifier = Modifier.fillMaxSize()){
-                    BusinessCard(name ="Dominique Legaspi",
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    BusinessCard(
+                        name = "Dominique Legaspi",
                         title = "Software Engineer",
                         phoneNumber = "111-111-1111",
                         email = "test@email.com",
-                        social = "@YoMama")
+                        social = "@YoMama"
+                    )
                 }
             }
         }
     }
+}
 
-    @Composable
-    fun BusinessCard(name: String, title: String, phoneNumber: String, email: String, social: String, modifier: Modifier = Modifier) {
-        Column (modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally){
-                BusinessInfo(name = name, title = title)
-                Spacer(modifier = Modifier.padding(100.dp))
-                BusinessBottom(phoneNumber = phoneNumber, email = email, social = social)
-                Spacer(modifier = Modifier.padding(30.dp))
-        }
-
+@Composable
+fun BusinessCard(name: String, title: String, phoneNumber: String, email: String, social: String, modifier: Modifier = Modifier) {
+    Column (modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.CenterHorizontally){
+            BusinessInfo(name = name, title = title)
+            Spacer(modifier = Modifier.padding(100.dp))
+            BusinessBottom(phoneNumber = phoneNumber, email = email, social = social)
+            Spacer(modifier = Modifier.padding(30.dp))
     }
 
-    @Composable
-    fun BusinessInfo(name: String, title: String, modifier: Modifier = Modifier) {
-        Column (modifier = modifier,
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ){
-            // Image()
-            Text(name,
-                fontSize = 35.sp,
-                fontWeight = FontWeight.Bold
-            )
+}
+
+@Composable
+fun BusinessInfo(name: String, title: String, modifier: Modifier = Modifier) {
+    Column (modifier = modifier,
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        // Image()
+        Text(name,
+            fontSize = 35.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Spacer(modifier = Modifier.padding(5.dp))
+        Text(title,
+            fontSize = 15.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+@Composable
+fun BusinessBottom(phoneNumber: String, email: String, social: String, modifier: Modifier = Modifier){
+    Column (modifier = modifier,
+        verticalArrangement = Arrangement.Bottom,
+        horizontalAlignment = Alignment.Start) {
+            Text(text = phoneNumber)
             Spacer(modifier = Modifier.padding(5.dp))
-            Text(title,
-                fontSize = 15.sp,
-                fontWeight = FontWeight.Bold
-            )
-        }
+            Text(text = email)
+            Spacer(modifier = Modifier.padding(5.dp))
+            Text(text = social)
     }
-    @Composable
-    fun BusinessBottom(phoneNumber: String, email: String, social: String, modifier: Modifier = Modifier){
-        Column (modifier = modifier,
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.Start) {
-                Text(text = phoneNumber)
-                Spacer(modifier = Modifier.padding(5.dp))
-                Text(text = email)
-                Spacer(modifier = Modifier.padding(5.dp))
-                Text(text = social)
-        }
-    }
+}
 
-    @Preview(showBackground = true)
-    @Composable
-    fun BusinessInfoPreview() {
-        BusinessCard(name ="Dominique Legaspi",
-            title = "Software Engineer",
-            phoneNumber = "111-111-1111",
-            email = "test@email.com",
-            social = "@YoMama")
-    }
-
+@Preview(showBackground = true)
+@Composable
+fun BusinessInfoPreview() {
+    BusinessCard(
+        name = "Dominique Legaspi",
+        title = "Software Engineer",
+        phoneNumber = "111-111-1111",
+        email = "test@email.com",
+        social = "@YoMama"
+    )
 }
 
