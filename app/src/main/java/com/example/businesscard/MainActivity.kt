@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     BusinessCard(
                         name = "Phuong Nguyen",
-                        title = "Professor of Mobile App Development",
+                        title = "Professor at CSULB",
                         phoneNumber = "111-111-1111",
                         email = "test@email.com",
                         social = "@YoMama"
@@ -147,7 +148,7 @@ fun BusinessBottom(
     ) {
         // Phone Number
         Row {
-            Image(
+            Icon(
                 painter = painterResource(id = R.drawable.phone_icon),
                 contentDescription = "phone number",
                 modifier = Modifier.size(30.dp)
@@ -162,7 +163,7 @@ fun BusinessBottom(
         Spacer(modifier = Modifier.padding(5.dp))
         // Email
         Row {
-            Image(
+            Icon(
                 painter = painterResource(id = R.drawable.email_icon),
                 contentDescription = "email",
                 modifier = Modifier.size(30.dp)
@@ -177,7 +178,7 @@ fun BusinessBottom(
         Spacer(modifier = Modifier.padding(5.dp))
         // LinkedIn
         Row {
-            Image(
+            Icon(
                 painter = painterResource(id = R.drawable.linkedin_icon),
                 contentDescription = "linkedin",
                 modifier = Modifier.size(30.dp)
@@ -197,7 +198,7 @@ fun BusinessBottom(
 fun BusinessInfoPreview() {
     BusinessCard(
         name = "Phuong Nguyen",
-        title = "Professor of Mobile App Development",
+        title = "Professor of CSULB",
         phoneNumber = "111-111-1111",
         email = "test@email.com",
         social = "@YoMama"
