@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BusinessCard</string>
+    <string name="name">Dominique Legaspi Dilag</string>
+    <string name="software_engineer">Software Engineer</string>
+    <string name="phone_number">111-111-1111</string>
+    <string name="test_email">test@email.com</string>
+    <string name="social_linkedin_id">John Dominique Legaspi Dilag</string>
 </resources>

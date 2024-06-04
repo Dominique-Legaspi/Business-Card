@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,11 +41,11 @@ class MainActivity : ComponentActivity() {
             BusinessCardTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     BusinessCard(
-                        name = "Phuong Nguyen",
-                        title = "Professor at CSULB",
-                        phoneNumber = "111-111-1111",
-                        email = "test@email.com",
-                        social = "@YoMama"
+                        name = stringResource(R.string.name),
+                        title = stringResource(R.string.software_engineer),
+                        phoneNumber = stringResource(R.string.phone_number),
+                        email = stringResource(R.string.test_email),
+                        social = stringResource(R.string.social_linkedin_id)
                     )
                 }
             }
@@ -117,7 +118,8 @@ fun BusinessInfo(name: String, title: String, modifier: Modifier = Modifier) {
             name,
             fontSize = 40.sp,
             fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            lineHeight = 40.sp
         )
         Spacer(modifier = Modifier.padding(5.dp))
         // title parameter
@@ -187,7 +189,7 @@ fun BusinessBottom(
             Text(
                 text = social,
                 fontSize = 22.sp,
-                fontWeight = FontWeight.SemiBold
+                fontWeight = FontWeight. SemiBold
             )
         }
     }
