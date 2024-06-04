@@ -97,11 +97,12 @@ fun BusinessCard(
 @Composable
 fun BusinessPhoto() {
     Image(
-        painter = painterResource(R.drawable.phuong),
+        painter = painterResource(R.drawable.dominique),
         contentDescription = "Profile image",
         modifier = Modifier
             .size(240.dp)
-            .clip(CircleShape)
+            .clip(CircleShape),
+        contentScale = ContentScale.Fit
     )
 }
 
